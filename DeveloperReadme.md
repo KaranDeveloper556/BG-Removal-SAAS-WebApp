@@ -15,6 +15,15 @@
 
 
 ### -- Pricing
+   -- Section Header
+   -- About Pricing
+   -- Pricing Section
+   -- CTA
+   --- Footer
 
 
 ### -- Playground
+   -- About
+   -- Playground Section
+   -- CTA
+   --- Footer
