@@ -6,6 +6,17 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'li': '350px',
+        'vsm': '480px',
+        'mdLg':'830px',
+        '3xl' : '1680px',
+        '4xl' : '2800px'
+      },
+      fontFamily: {
+        'Ubuntu': ["Ubuntu", "sans-serif"],
+        'Bebas_neue': ["Bebas Neue", 'sans-serif'],
+      },
       colors: {
         blue: {
           50: "#DFDFF0",
