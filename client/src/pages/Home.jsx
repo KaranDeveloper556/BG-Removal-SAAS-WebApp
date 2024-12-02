@@ -1,8 +1,10 @@
-import React from 'react'
+import HeroSection from './../components/Sections/HeroSection'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <main className='section-padding'>
+      <HeroSection />
+    </main>
   )
 }
 

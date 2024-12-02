@@ -5,7 +5,15 @@
 @tailwind utilities;
 
 @layer utilities {
-  .Full-flex-center {
+  .section-padding {
+    @apply max-w-[100rem] mx-auto px-[.8rem] sm:px-[1.5rem] lg:px-[2.5rem]
+  }
+
+  .subtitle-text-size {
+    @apply lg:text-3xl text-2xl
+  }
+
+  .full-flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,11 +25,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  font-family: "Ubuntu", sans-serif;
 }

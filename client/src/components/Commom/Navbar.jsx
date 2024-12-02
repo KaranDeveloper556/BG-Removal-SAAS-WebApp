@@ -24,7 +24,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="max-w-[100rem] mx-auto px-[.8rem] sm:px-[1.5rem] lg:px-[2.5rem] ">
+    <nav className="max-w-[100rem] mx-auto px-[.8rem] sm:px-[1.5rem] lg:px-[2rem] ">
       <div className=" py-[1.2rem] flex items-center justify-between border-b-2 border-gray-300">
         {/* Logo */}
         <div className="flex-shrink-0 flex items-center z-[99]" id="logo-box">
