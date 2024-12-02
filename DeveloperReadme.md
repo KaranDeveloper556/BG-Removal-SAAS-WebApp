@@ -1,11 +1,11 @@
 # WEBSITE LAYOUT
 
-## UTILITY COMPONENT
+## COMMON COMPONENT
   -- Navbar
   -- Footer
   -- CTA (Call To Action)
 
-## COMMON COMPONENT
+## UTILITY COMPONENT
   -- Custom Button
   -- Custom NavLink or Link
   -- Section Heading
