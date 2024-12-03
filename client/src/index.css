@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,11 +6,11 @@
 
 @layer utilities {
   .section-padding {
-    @apply max-w-[100rem] mx-auto px-[.8rem] sm:px-[1.5rem] lg:px-[2.5rem]
+    @apply max-w-[100rem] mx-auto px-[.8rem] sm:px-[1.5rem] lg:px-[2.5rem];
   }
 
   .subtitle-text-size {
-    @apply lg:text-3xl text-2xl
+    @apply lg:text-3xl text-2xl;
   }
 
   .full-flex-center {
@@ -32,4 +32,23 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Ubuntu", sans-serif;
+}
+
+#bg-slider-range {
+  appearance: none;
+  border-radius: 50%;
+  background: transparent;
+}
+
+#bg-slider-range::-webkit-slider-thumb {
+  appearance: none;
+  border: 2px solid gray;
+  border-radius: 50%;
+  width: 30px;
+  min-height: 30px;
+  background: black;
+  background: url("./public/assets/slide_icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
