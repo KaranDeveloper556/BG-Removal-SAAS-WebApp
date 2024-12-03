@@ -7,8 +7,12 @@ import { LuUser2 } from "react-icons/lu";
 import { CgMenuRight } from "react-icons/cg";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
+import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
 
 const Navbar = () => {
+  const { openSignIn } = useClerk();
+  const { isSignedIn, user } = useUser();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
@@ -17,9 +21,7 @@ const Navbar = () => {
   ];
 
   const handleToggle = () => {
-    if (window.innerWidth < 768) {
-      setIsOpen(!isOpen);
-    }
+    setIsOpen(!isOpen);
   };
 
 
@@ -28,7 +30,7 @@ const Navbar = () => {
       <div className=" py-[1.2rem] flex items-center justify-between border-b-2 border-gray-300">
         {/* Logo */}
         <div className="flex-shrink-0 flex items-center z-[99]" id="logo-box">
-          <NavLink to="/">
+          <NavLink to="/" onClick={() => setIsOpen(false)} >
             <img src="/kdevelops-logo.png" alt="logo" className=" li:h-[2rem] h-[1.5rem] " />
           </NavLink>
         </div>
@@ -40,7 +42,7 @@ const Navbar = () => {
               {
                 links.map(
                   (link, index) => {
-                    return <NavLink key={index} to={link.slug} onClick={handleToggle} className={({ isActive }) =>
+                    return <NavLink key={index} to={link.slug} onClick={() => setIsOpen(false)} className={({ isActive }) =>
                       `${isActive ? 'text-indigo-600 border-b-2' : ''} ${isOpen ? 'border-b-2' : ''} flex items-center justify-between hover:text-indigo-600`
                     } id={`links-${index}`}>
                       {link.link}
@@ -56,7 +58,11 @@ const Navbar = () => {
 
           {/* Right buttons (hidden on small screens) */}
           <div className={isOpen ? 'auth-btn-mobile fixed bottom-10 right-10 flex items-center gap-2 scale-[1.3] z-[99]' : "md:flex items-center gap-2 hidden z-[99]"} id="auth-btn">
-            <CustomButton icon={<LuUser2 />} value={'Register'} />
+            {
+              isSignedIn ? <div className="cleck-profile">
+                <UserButton />
+              </div> : <CustomButton onclick={() => openSignIn({})} icon={<LuUser2 />} value={'Register'} />
+            }
           </div>
 
           {/* Mobile menu CustomButton */}
